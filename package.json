@@ -4,8 +4,8 @@
   "description": "Javascript web crawler for generating link reports",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node main.js"
+    "test": "jest",
+    "start": "node crawl.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/jacklion710/web-crawler/issues"
   },
-  "homepage": "https://github.com/jacklion710/web-crawler#readme"
+  "homepage": "https://github.com/jacklion710/web-crawler#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
