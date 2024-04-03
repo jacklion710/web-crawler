@@ -1,9 +1,8 @@
-const myURL = new URL('https://example.org')
-function normalizeURL(url) {
-    console.log('myURL.href')
+function normalizeURL(urlString) {
+    const url = new URL(urlString)
+    const hostPath = `${url.hostname}${url.pathname}`
+    return hostPath.endsWith('/') ? hostPath.slice(0, -1) : hostPath
 }
-
-normalizeURL(myURL)
 
 module.exports = {
     normalizeURL
