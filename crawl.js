@@ -45,7 +45,7 @@ async function crawlPage(baseUrl, currentUrl, pages) {
         return pages
     }
     pages[normalizedCurrentUrl] = 1
-    console.log(`Currently crawling: $currentUrl`)
+    console.log(`Currently crawling: ${currentUrl}`)
     try {
         const resp = await fetch(currentUrl)
         if(resp.status > 399) {
