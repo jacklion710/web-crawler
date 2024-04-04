@@ -39,7 +39,7 @@ async function crawlPage(baseUrl, currentUrl, pages) {
     if (baseUrlObj.hostname !== currentUrlObj.hostname) {
         return pages
     }
-    const normalizeCurrentUrl = normalizeURL(currentUrl)
+    const normalizedCurrentUrl = normalizeURL(currentUrl)
     if (pages[normalizedCurrentUrl] > 0) {
         pages[normalizedCurrentUrl]++
         return pages
@@ -52,7 +52,7 @@ async function crawlPage(baseUrl, currentUrl, pages) {
             console.log('Error in fetching with status code: ', resp.status, ' on page: ', currentUrl)
             return pages
         }
-        const contentType = resp.headerrs.get('content-type')
+        const contentType = resp.headers.get('content-type')
         if (!contentType.includes('text/html')) {
             console.log("Non HTML response content type: ", contentType, " on page: ", currentUrl)
             return pages
